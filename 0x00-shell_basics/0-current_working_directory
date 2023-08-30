@@ -1,2 +1,2 @@
 #!/bin/bash
-absolute_path=$(pwd)
+pwd
