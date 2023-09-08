@@ -1,4 +1,4 @@
-# Shell Basics
+## Shell Basics
 
 In this section, I've explored the core concepts of using the Unix/Linux shell, including:
 
