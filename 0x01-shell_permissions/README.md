@@ -5,4 +5,3 @@ Shell permissions are crucial for ensuring the security and access control of fi
 - File permissions (read, write, execute)
 - User, group, and others' permissions
 - Changing permissions (chmod)
-- Special permissions (setuid, setgid, sticky bit)
