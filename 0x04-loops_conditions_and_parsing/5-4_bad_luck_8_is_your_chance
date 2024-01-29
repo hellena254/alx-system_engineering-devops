@@ -2,7 +2,7 @@
 # display "bad luck" and "good luck" on 4th and 8th iteration resp
 
 # initialize the count
-count=0;
+count=1;
 
 #iterate to diplay
 while [ $count -le 10 ]; do
