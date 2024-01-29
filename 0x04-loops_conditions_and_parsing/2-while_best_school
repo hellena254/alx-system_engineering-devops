@@ -5,7 +5,7 @@
 count=0;
 
 # iterate to display "Best School"
-while [ $count -lt 10 ]; do
+while (("$count" <= 10)); do
 	echo "Best School"
-	((count+++))
+	((count++))
 done
