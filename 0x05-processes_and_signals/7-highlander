@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# A script that
+# To infinity and beyond indefinitely
+# With a sleep 2 in between each iteration
+# I am invincible!!! when receiving a SIGTERM signal
+
+# function to handle SIGTERM signal
+handle_terminate() {
+	echo "I am invisible!!!"
+	exit 0
+}
+
+# register handle_terminate function for SIGTERM
+trap handle_terminate SIGTERM
+
+# Infinite loop displaying the message with 2 sec sleep
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
