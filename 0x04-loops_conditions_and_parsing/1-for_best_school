@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Display "Best School" ten times
+# This script Displays "Best School" ten times
 
 for ((i=0; i<10; i++)); do
     echo "Best School"
