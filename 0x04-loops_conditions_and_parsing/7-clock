@@ -5,7 +5,7 @@
 hour=0
 
 # iterate to display the hours
-while [ $hour -lt 12 ]; do
+while [ $hour -le 12 ]; do
 	echo "Hour: $hour"
 
 	# initialize and iterate to display the minutes
