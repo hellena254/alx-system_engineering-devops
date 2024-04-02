@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Configure HAproxy so that it send traffic to web-01 and web-02
+# Distribute requests using a roundrobin algorithm
+# Make sure that HAproxy can be managed via an init script
+# Make sure that your servers are configured with the right hostnames: [STUDENT_ID]-web-01 and [STUDENT_ID]-web-02
+
+# Install HAproxy
+sudo apt-get -y update
+apt-get -y install haproxy
+
+# config file
+server_config=\
+"
+frontend h_frontend
+	bind *:80
+	mode http
+	default_backend h_backend
+backend h_backend
+	balance roundrobin
+	server 525709-web-01 52.91.122.105 check
+	server 525709-web-02 54.165.40.230 check
+"
+echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
+
+# haproxy to be started
+echo "ENABLED-1" | sudo tee -a /etc/default/haproxy
+
+# testing the config file
+sudo haproxy -c -f /etc/haproxy/haproxy.cfg
+
+# restart the Nginx 
+sudo service haproxy restart
