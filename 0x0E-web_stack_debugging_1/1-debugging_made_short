@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 # Configure the NGINX server to listen on port 80
 
-# 1. create a symbolic link between the 
-# Nginx config file and the enabled sites directory
-ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
 
-# 2. restart nginx 
-service nginx start
+# restart nginx 
+sudo service nginx restart
 
-# end the first nginx process
-kill "$(pgrep 'nginx' | head -l)"
+echo "" | sudo dd status=none of=/run/nginx.pid
