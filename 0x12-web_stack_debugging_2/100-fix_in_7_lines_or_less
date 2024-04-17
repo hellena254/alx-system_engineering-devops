@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Using what you did for task #1
-# Your Bash script must be 7 lines long or less
+# your Bash script must be 7 lines long or less
 
 chmod 644 /etc/nginx/nginx.conf
 sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
