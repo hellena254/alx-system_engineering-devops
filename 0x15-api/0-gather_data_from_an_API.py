@@ -1,14 +1,16 @@
 #!/usr/bin/python3
 """
-Python script that, using this REST API, for a given employee ID, returns information about his/her TODO list progress.
+Python script that, using this REST API,
+for a given employee ID,
+returns information about his/her TODO list progress.
 
 You must use urllib or requests module
 The script must accept an integer as a parameter, which is the employee ID
 """
 # Importing the requests module for making HTTP requests
-import requests  
+import requests
 # Importing the sys module for accessing command line arguments
-import sys  
+import sys
 
 if __name__ == "__main__":
     # Base URL for the JSONPlaceholder API
