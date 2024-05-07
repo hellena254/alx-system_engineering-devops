@@ -8,7 +8,7 @@ import requests
 
 def recurse(subreddit, hot_list=[]):
     """
-    Recursively queries the Reddit API for hot topics
+    Recursively queries the Reddit API for hot topics.
 
     Args:
         subreddit (str): The name of the subreddit to search for.

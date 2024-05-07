@@ -3,6 +3,7 @@
 Queries the Reddit API and print the titles of the first 10 post
 """
 
+
 import requests
 
 
