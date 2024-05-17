@@ -1,27 +1,13 @@
-# Puppet manifest to optimize Nginx configuration
+# Enhance Nginx server's capacity to handle more traffic
 
-# Define a class for Nginx configuration
-class nginx_config {
-    
-    # Ensure Nginx package is installed
-    package { 'nginx':
-        ensure => installed,
-    }
+# Increase the ULIMIT in the Nginx default configuration
+exec { 'adjust-nginx-ulimit':
+  command => 'sed -i "s/15/4096/" /etc/default/nginx',
+  path    => '/usr/local/bin/:/bin/'
+} ->
 
-    # Define Nginx configuration file
-    file { '/etc/nginx/nginx.conf':
-        ensure  => file,
-        content => template('nginx/nginx.conf.erb'),
-        notify  => Service['nginx'],
-    }
-
-    # Ensure Nginx service is running and enabled
-    service { 'nginx':
-        ensure    => running,
-        enable    => true,
-        subscribe => File['/etc/nginx/nginx.conf'],
-    }
+# Restart the Nginx service
+exec { 'restart-nginx':
+  command => 'nginx restart',
+  path    => '/etc/init.d/'
 }
-
-# Include the Nginx configuration class
-include nginx_config
